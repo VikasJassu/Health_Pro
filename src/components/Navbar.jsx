@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/ivfLogo.svg";
 import MenuIcon from "../assets/hamburger.svg";
 import { FaArrowRight } from "react-icons/fa";
 import { CiBurger } from "react-icons/ci";
+import Drawer from "./Drawer";
 
 const linkCSS =
   "hover:text-[#F48265] transition font-poppins font-medium text-[#1E231E]";
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <nav className="bg-white shadow-md fixed z-10 w-screen">
       <div className="container mx-auto px-4 flex items-center justify-between py-4">
@@ -50,9 +52,14 @@ const Navbar = () => {
               <FaArrowRight />
             </div>
           </Link>
-          <img src={MenuIcon} className="sm:hidden w-8" />
+          <img
+            onClick={() => setOpen(true)}
+            src={MenuIcon}
+            className="sm:hidden w-8"
+          />
         </div>
       </div>
+      {open && <Drawer isOpen={open} setIsOpen={setOpen} />}
     </nav>
   );
 };

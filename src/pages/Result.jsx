@@ -1,5 +1,5 @@
 // File: src/components/Result.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import coupleImage from "../assets/project.png";
@@ -7,7 +7,15 @@ import sideIcon from "../assets/sideIcon.svg";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Result = ({ successRate = 64 }) => {
+const Result = () => {
+  const [successRate, setSuccessRate] = useState(50);
+
+  useEffect(() => {
+    //we generate random percentage every time between 50 - 90 to show in circular chart
+    const randomNumber = Math.floor(Math.random() * 40 + 1) + 50;
+    setSuccessRate(randomNumber);
+  }, []);
+  
   return (
     <div className="bg-[#303030] font-poppins relative min-h-screen overflow-x-hidden">
       <div className="container mx-auto sm:px-6 sm:py-10 p-5 sm:space-y-10 mt-16">
@@ -69,7 +77,7 @@ const Result = ({ successRate = 64 }) => {
           </p>
         </div>
 
-        <div className="sm:h-[70vh] absolute sm:bottom-0 sm:-right-24 bottom-20">
+        <div className="sm:h-[70vh] absolute sm:bottom-0 sm:-right-24 -bottom-10">
           <div className="bg-green-800 w-[450px] sm:w-[600px] absolute aspect-square blur-3xl opacity-55 sm:left-48 -top-32 -left-5 rounded-full"></div>
 
           <img
