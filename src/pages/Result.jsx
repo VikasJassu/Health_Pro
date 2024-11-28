@@ -11,12 +11,17 @@ const Result = ({ successRate = 64 }) => {
   return (
     <div className="bg-[#303030] font-poppins relative min-h-screen overflow-x-hidden">
       <div className="container mx-auto sm:px-6 sm:py-10 p-5 sm:space-y-10 mt-16">
-        <div className="text-gray-500 text-sm space-x-3 hidden sm:block">
+        <div className="text-white space-x-3 hidden sm:block">
           <span>Home</span>
-          <span className="text-gray-500">/</span>
-          <span>IVF Success Rate Calculator</span>
-          <span className="text-gray-500">/</span>
-          <span className="text-white">Result</span>
+          <span className="text-white">/</span>
+          <Link to="/">
+            {" "}
+            <span className=" hover:text-white">
+              IVF Success Rate Calculator
+            </span>
+          </Link>
+          <span className="text-white">/</span>
+          <span className="text-white font-semibold">Result</span>
         </div>
 
         <div className="flex sm:hidden items-center gap-3 text-white font-poppins text-lg font-medium">

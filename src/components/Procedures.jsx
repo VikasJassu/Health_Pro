@@ -16,24 +16,38 @@ const Procedures = () => {
             ICSI Procedure:
           </label>
           <label className="flex items-center space-x-1">
+            <div
+              className={`w-6 h-6 rounded-full border-2 flex items-center justify-center border-[#F48265] cursor-pointer`}
+            >
+              {icsi === true && (
+                <div className="w-3 h-3 bg-[#F48265] rounded-full cursor-pointer"></div>
+              )}
+            </div>
             <input
               type="radio"
               name="icsi"
               value="yes"
-              className="sm:w-5 w-4 sm:h-5 h-4 accent-red-500 border-2 border-red-500"
               onChange={() => setIcsi(true)}
+              className="hidden"
             />
             <span className="sm:text-lg text-sm font-poppins text-[#1E231E] leading-7 opacity-80">
               Yes
             </span>
           </label>
           <label className="flex items-center space-x-1">
+            <div
+              className={`w-6 h-6 rounded-full border-2 flex items-center justify-center border-[#F48265] cursor-pointer`}
+            >
+              {icsi === false && (
+                <div className="w-3 h-3 bg-[#F48265] rounded-full cursor-pointer"></div>
+              )}
+            </div>
             <input
               type="radio"
               name="icsi"
               value="no"
-              className="sm:w-5 w-4 sm:h-5 h-4 accent-red-500 border-2 border-red-500"
               onChange={() => setIcsi(false)}
+              className="hidden"
             />
             <span className="sm:text-lg text-sm font-poppins text-[#1E231E] leading-7 opacity-80">
               No
@@ -47,24 +61,38 @@ const Procedures = () => {
             PGT Testing:
           </label>
           <label className="flex items-center space-x-1 translate-x-5 sm:translate-x-0">
+            <div
+              className={`w-6 h-6 rounded-full border-2 flex items-center justify-center border-[#F48265] cursor-pointer`}
+            >
+              {pgt === true && (
+                <div className="w-3 h-3 bg-[#F48265] rounded-full cursor-pointer"></div>
+              )}
+            </div>
             <input
               type="radio"
               name="pgt"
               value="yes"
-              className="sm:w-5 w-4 sm:h-5 h-4 accent-red-500 border-2 border-red-500"
               onChange={() => setPgt(true)}
+              className="hidden"
             />
             <span className="sm:text-lg text-sm font-poppins text-[#1E231E] leading-7 opacity-80">
               Yes
             </span>
           </label>
           <label className="flex items-center space-x-1 translate-x-5 sm:translate-x-0">
+            <div
+              className={`w-6 h-6 rounded-full border-2 flex items-center justify-center border-[#F48265] cursor-pointer`}
+            >
+              {pgt === false && (
+                <div className="w-3 h-3 bg-[#F48265] rounded-full cursor-pointer"></div>
+              )}
+            </div>
             <input
               type="radio"
               name="pgt"
               value="no"
-              className="sm:w-5 w-4 sm:h-5 h-4 accent-red-500 border-2 border-red-500"
               onChange={() => setPgt(false)}
+              className="hidden"
             />
             <span className="sm:text-lg text-sm font-poppins text-[#1E231E] leading-7 opacity-80">
               No

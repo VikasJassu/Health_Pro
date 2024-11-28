@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { CiBurger } from "react-icons/ci";
 
 const linkCSS =
-  "hover:text-pink-500 transition font-poppins font-medium text-[#1E231E]";
+  "hover:text-[#F48265] transition font-poppins font-medium text-[#1E231E]";
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-md fixed z-10 w-screen">

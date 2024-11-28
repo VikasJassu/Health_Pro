@@ -45,7 +45,10 @@ const Homepage = () => {
         <Conditions />
 
         {/* Calculate Button */}
-        <Link to="/result" className="flex justify-center sm:relative fixed bottom-20 left-[50%] right-[50%] sm:left-0 sm:right-0 sm:bottom-0 sm:pt-5 sm:pb-16">
+        <Link
+          to="/result"
+          className="flex justify-center sm:relative fixed bottom-20 left-[50%] right-[50%] sm:left-0 sm:right-0 sm:bottom-0 sm:pt-5 sm:pb-16"
+        >
           <button className="bg-[#D75555] sm:text-lg text-white font-poppins px-8 py-3 rounded-lg font-medium hover:bg-red-600 transition">
             Calculate
           </button>
