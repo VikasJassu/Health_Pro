@@ -7,10 +7,10 @@ import sideIcon from "../assets/sideIcon.svg";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Result = ({ successRate = 54 }) => {
+const Result = ({ successRate = 64 }) => {
   return (
-    <div className="bg-[#303030] font-poppins relative min-h-screen overflow-hidden">
-      <div className="container mx-auto sm:px-6 sm:py-10 p-5 sm:space-y-10">
+    <div className="bg-[#303030] font-poppins relative min-h-screen overflow-x-hidden">
+      <div className="container mx-auto sm:px-6 sm:py-10 p-5 sm:space-y-10 mt-16">
         <div className="text-gray-500 text-sm space-x-3 hidden sm:block">
           <span>Home</span>
           <span className="text-gray-500">/</span>
@@ -23,25 +23,40 @@ const Result = ({ successRate = 54 }) => {
           <FaArrowLeft />
           <div className="flex items-center">IVF Success Rate Calculator</div>
         </div>
-        <img
+        {/* <img
           src={sideIcon}
           className="absolute sm:translate-x-6 sm:top-[92px] -left-24 top-[72px]"
         />
         <h1 className="font-poppins font-medium sm:text-[44px] sm:leading-[96px] text-white sm:ml-16 ml-12 sm:mt-0 mt-7">
           Your estimated IVF Success Rate is
-        </h1>
+        </h1> */}
 
-        <div className="flex flex-col items-center relative sm:right-96 sm:top-14 top-5">
+        <div className="flex items-center sm:gap-6 sm:mt-0 mt-1 relative">
+          <img
+            src={sideIcon}
+            className="sm:w-auto w-20 sm:h-auto h-16 sm:-translate-x-32 -translate-x-16 sm:top-[0] -top-1 relative"
+            alt="Side Icon"
+          />
+          <h1 className="font-poppins font-medium text-sm sm:text-[40px] sm:leading-[96px] text-white sm:-translate-x-32 -translate-x-14 -mt-2 sm:-mt-0">
+            Your estimated IVF Success Rate is
+          </h1>
+        </div>
+
+        <div className="flex flex-col items-center relative sm:right-96 sm:top-6 top-5">
           <div className="sm:w-56 sm:h-56 w-48 h-48">
             <CircularProgressbar
               value={successRate}
               text={`${successRate}%`}
+              strokeWidth={17}
               styles={buildStyles({
-                textSize: "24px",
+                textSize: "20px",
                 textColor: "#ffffff",
-                pathColor: "#1EC97C", // Green color
-                trailColor: "#2C2C2C", // Dark trail
+                pathColor: "#5BD489", // Green color
+                trailColor: "#3d614b", // Dark trail
+                strokeLinecap: "butt",
+                backgroundColor: "#032706",
               })}
+              background
             />
           </div>
           <p className="font-poppins font-medium mt-6 text-xl text-white">
@@ -49,8 +64,8 @@ const Result = ({ successRate = 54 }) => {
           </p>
         </div>
 
-        <div className="sm:h-[70vh] sm:fixed absolute sm:bottom-0 sm:-right-24 bottom-20">
-          <div className="bg-green-800 w-[450px] absolute aspect-square blur-3xl opacity-55 sm:-z-20 sm:left-56 -top-32 -left-5 rounded-full"></div>
+        <div className="sm:h-[70vh] absolute sm:bottom-0 sm:-right-24 bottom-20">
+          <div className="bg-green-800 w-[450px] sm:w-[600px] absolute aspect-square blur-3xl opacity-55 sm:left-48 -top-32 -left-5 rounded-full"></div>
 
           <img
             src={coupleImage}

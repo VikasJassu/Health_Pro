@@ -9,7 +9,7 @@ import Left from "../assets/leftArrow.svg";
 const Homepage = () => {
   return (
     <div className="bg-[#FCFAF5] min-h-screen font-poppins">
-      <div className="container mx-auto sm:px-6 p-4 sm:py-10 sm:space-y-10">
+      <div className="container mx-auto sm:px-6 p-4 sm:pb-10 sm:space-y-10 sm:pt-24 pt-20">
         {/* Breadcrumb */}
         <div className="flex items-center gap-3 text-[#1E231E]">
           <img src={Left} className="sm:hidden" />

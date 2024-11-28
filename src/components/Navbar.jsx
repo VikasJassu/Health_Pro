@@ -9,7 +9,7 @@ const linkCSS =
   "hover:text-pink-500 transition font-poppins font-medium text-[#1E231E]";
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md fixed z-10 w-screen">
       <div className="container mx-auto px-4 flex items-center justify-between py-4">
         {/* Logo */}
         <div className="flex items-center">
