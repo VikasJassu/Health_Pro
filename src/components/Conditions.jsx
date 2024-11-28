@@ -19,11 +19,11 @@ const Conditions = () => {
   ];
 
   return (
-    <div className="text-center">
-      <h1 className="text-[28px] leading-10 text-[#1E231E] font-poppins font-medium">
+    <div className="sm:text-center">
+      <h1 className="sm:text-[28px] sm:leading-10 leading-6 sm:mt-0 mt-4 text-[#1E231E] font-poppins font-medium">
         Do you have any of these medical conditions?
       </h1>
-      <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 mt-4">
+      <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-12 gap-y-4 mt-4">
         {options.map((option, index) => (
           <label
             key={index}
@@ -32,10 +32,10 @@ const Conditions = () => {
             <input
               type="checkbox"
               value={option}
-              className="w-6 h-6 border-2 rounded-md accent-[#F48265] checked:border-[#F48265] checked:bg-[#F48265]"
+              className="sm:w-6 w-5 sm:h-6 h-5 border-2 rounded-md accent-[#F48265] checked:border-[#F48265] checked:bg-[#F48265]"
               onChange={() => toggleCondition(option)}
             />
-            <span className="text-xl leading-9 opacity-80 font-poppins text-[#1E231E]">
+            <span className="sm:text-xl text-sm sm:leading-9 leading-5 opacity-80 font-poppins text-[#1E231E]">
               {option}
             </span>
           </label>

@@ -4,19 +4,26 @@ import Slider from "../components/Slider";
 import Procedures from "../components/Procedures";
 import Conditions from "../components/Conditions";
 import { Link } from "react-router-dom";
+import Left from "../assets/leftArrow.svg";
 
 const Homepage = () => {
   return (
     <div className="bg-[#FCFAF5] min-h-screen font-poppins">
-      <div className="container mx-auto px-6 py-10 space-y-10">
+      <div className="container mx-auto sm:px-6 p-4 sm:py-10 sm:space-y-10">
         {/* Breadcrumb */}
-        <div className="text-gray-500 text-sm">
-          <span>Home</span> <span className="mx-2">/</span>
-          <span className="font-medium text-gray-900">IVF Success Rate Calculator</span>
+        <div className="flex items-center gap-3 text-[#1E231E]">
+          <img src={Left} className="sm:hidden" />
+          <div className="flex items-center">
+            <span className="hidden sm:inline">Home</span>
+            <span className="mx-2 hidden sm:inline-block">/</span>
+            <span className="font-medium sm:font-semibold text-lg">
+              IVF Success Rate Calculator
+            </span>
+          </div>
         </div>
 
         {/* Title */}
-        <h1 className="text-center text-[28px] leading-10 text-[#1E231E] font-poppins font-medium">
+        <h1 className="sm:text-center sm:text-[28px] leading-10 mt-4 sm:mt-0 text-[#1E231E] font-poppins font-medium">
           Which age range applies to you?
         </h1>
 
@@ -24,8 +31,8 @@ const Homepage = () => {
         <AgeRange />
 
         {/* Slider */}
-        <div className="text-center">
-          <h1 className="text-center text-[28px] leading-10 text-[#1E231E] font-poppins font-medium">
+        <div className="sm:text-center">
+          <h1 className="sm:text-center sm:text-[28px] leading-10 sm:mt-0 mt-3 text-[#1E231E] font-poppins font-medium">
             Number of IVF Cycles?
           </h1>
           <Slider />
@@ -38,8 +45,8 @@ const Homepage = () => {
         <Conditions />
 
         {/* Calculate Button */}
-        <Link to='/result' className="flex justify-center">
-          <button className="bg-red-500 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-red-600 transition">
+        <Link to="/result" className="flex justify-center sm:relative fixed bottom-20 left-[50%] right-[50%] sm:left-0 sm:right-0 sm:bottom-0 sm:pt-5 sm:pb-16">
+          <button className="bg-[#D75555] sm:text-lg text-white font-poppins px-8 py-3 rounded-lg font-medium hover:bg-red-600 transition">
             Calculate
           </button>
         </Link>

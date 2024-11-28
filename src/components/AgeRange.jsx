@@ -13,7 +13,7 @@ const AgeRange = () => {
   ];
 
   return (
-    <div className="mx-auto w-6/12 flex flex-wrap justify-center space-x-8">
+    <div className="mx-auto sm:w-6/12 flex flex-wrap justify-center flex-col sm:flex-row sm:space-x-8">
       {ageRanges.map((range, index) => (
         <label
           key={index}
@@ -23,9 +23,9 @@ const AgeRange = () => {
             type="radio"
             name="ageRange"
             value={range}
-            className="w-5 h-5 accent-red-500 border-2 border-red-500"
+            className="sm:w-5 w-4 h-4 sm:h-5 accent-red-500 border-2 border-red-500"
           />
-          <span className="text-xl font-poppins text-[#1E231E] opacity-80 leading-[45px]">
+          <span className="sm:text-xl text-sm font-poppins text-[#1E231E] opacity-80 sm:leading-[45px] leading-8">
             {range}
           </span>
         </label>

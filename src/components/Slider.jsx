@@ -8,11 +8,11 @@ const Slider = () => {
       {/* Tooltip for value */}
       <div className="relative">
         <div
-          className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-[#F48265] text-white text-sm font-medium rounded-md px-4 py-1 shadow-md"
+          className="absolute sm:-top-8 -top-6 left-1/2 transform sm:-translate-x-1/2 -translate-x-3 bg-[#F48265] text-white text-sm font-medium rounded-md sm:px-4 sm:py-1 px-3 py-[1px] shadow-md"
           style={{ left: `${(value - 1) * 25}%` }} // Adjust tooltip based on slider value
         >
           {value}
-          <div className="bg-[#F48265] w-5 h-3 rotate-45 absolute top-4 right-[11px] -z-20"></div>
+          <div className="bg-[#F48265] w-5 h-3 rotate-45 absolute sm:top-4 sm:right-[11px] top-[10px] right-[7px] -z-20"></div>
         </div>
        
         <input
@@ -20,8 +20,8 @@ const Slider = () => {
           min="1"
           max="5"
           value={value}
-          onChange={(e) => setValue(e.target.value)}
-          className="w-96 h-2 appearance-none bg-gray-200 rounded-full outline-none cursor-pointer"
+          onChange={(e) => setValue(e.target.value)} 
+          className="sm:w-96 w-[90vw] sm:h-2 h-[6px] appearance-none bg-gray-200 rounded-full outline-none cursor-pointer"
           style={{
             background: `linear-gradient(to right, #F48265 0%, #F48265 ${
               (value - 1) * 25

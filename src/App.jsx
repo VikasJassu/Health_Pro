@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="">
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/result" element={<Result />} />
