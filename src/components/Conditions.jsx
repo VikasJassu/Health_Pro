@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Conditions = () => {
-  const [conditions, setConditions] = useState([]);
-
+const Conditions = ({ conditions, setConditions }) => {
   const toggleCondition = (condition) => {
     if (conditions.includes(condition)) {
       setConditions(conditions.filter((item) => item !== condition));

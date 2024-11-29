@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import AgeRange from "../components/AgeRange";
 import Slider from "../components/Slider";
 import Procedures from "../components/Procedures";
 import Conditions from "../components/Conditions";
-import { Link } from "react-router-dom";
 import Left from "../assets/leftArrow.svg";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+  const [selectedAge, setSelectedAge] = useState("");
+  const [icsi, setIcsi] = useState(null);
+  const [pgt, setPgt] = useState(null);
+  const [conditions, setConditions] = useState([]);
+  const navigate = useNavigate();
+
+  //basic validation applied here before calculating the estimated success rate
+  const handleClick = () => {
+    if (
+      selectedAge === "" ||
+      icsi === null ||
+      pgt === null ||
+      conditions.length === 0
+    ) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+    navigate("/result");
+  };
   return (
     <div className="bg-[#FCFAF5] min-h-screen font-poppins">
       <div className="container mx-auto sm:px-6 p-4 sm:pb-10 sm:space-y-10 sm:pt-24 pt-20">
@@ -28,7 +47,7 @@ const Homepage = () => {
         </h1>
 
         {/* Age Range */}
-        <AgeRange />
+        <AgeRange selectedAge={selectedAge} setSelectedAge={setSelectedAge} />
 
         {/* Slider */}
         <div className="sm:text-center">
@@ -39,20 +58,20 @@ const Homepage = () => {
         </div>
 
         {/* Procedures */}
-        <Procedures />
+        <Procedures icsi={icsi} pgt={pgt} setIcsi={setIcsi} setPgt={setPgt} />
 
         {/* Conditions */}
-        <Conditions />
+        <Conditions conditions={conditions} setConditions={setConditions} />
 
         {/* Calculate Button */}
-        <Link
-          to="/result"
-          className="flex justify-center sm:relative fixed bottom-20 left-[50%] right-[50%] sm:left-0 sm:right-0 sm:bottom-0 sm:pt-5 sm:pb-16"
-        >
-          <button className="bg-[#D75555] sm:text-lg text-white font-poppins px-8 py-3 rounded-lg font-medium hover:bg-red-600 transition">
+        <div className="flex justify-center sm:relative fixed bottom-20 left-[50%] right-[50%] sm:left-0 sm:right-0 sm:bottom-0 sm:pt-5 sm:pb-16">
+          <button
+            onClick={handleClick}
+            className="bg-[#D75555] sm:text-lg text-white font-poppins px-8 py-3 rounded-lg font-medium hover:bg-red-600 transition"
+          >
             Calculate
           </button>
-        </Link>
+        </div>
       </div>
     </div>
   );

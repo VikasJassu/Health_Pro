@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const AgeRange = () => {
-  const [selectedAge, setSelectedAge] = useState("");
-
+const AgeRange = ({ selectedAge, setSelectedAge }) => {
   const ageRanges = [
     "Under 30",
     "Between 30 - 34",

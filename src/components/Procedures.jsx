@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Procedures = () => {
-  const [icsi, setIcsi] = useState(null);
-  const [pgt, setPgt] = useState(null);
-
+const Procedures = ({ icsi, setIcsi, pgt, setPgt }) => {
   return (
     <div className="sm:text-center sm:space-y-6 space-y-2">
       <h1 className="sm:text-[28px] sm:leading-10 leading-6 mt-6 sm:mt-0 text-[#1E231E] font-poppins font-medium">
