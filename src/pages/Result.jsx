@@ -36,13 +36,6 @@ const Result = () => {
           <FaArrowLeft />
           <div className="flex items-center">IVF Success Rate Calculator</div>
         </div>
-        {/* <img
-          src={sideIcon}
-          className="absolute sm:translate-x-6 sm:top-[92px] -left-24 top-[72px]"
-        />
-        <h1 className="font-poppins font-medium sm:text-[44px] sm:leading-[96px] text-white sm:ml-16 ml-12 sm:mt-0 mt-7">
-          Your estimated IVF Success Rate is
-        </h1> */}
 
         <div className="flex items-center sm:gap-6 sm:mt-0 mt-1 relative">
           <img
