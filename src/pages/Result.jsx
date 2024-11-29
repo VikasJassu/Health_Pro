@@ -15,7 +15,7 @@ const Result = () => {
     const randomNumber = Math.floor(Math.random() * 40 + 1) + 50;
     setSuccessRate(randomNumber);
   }, []);
-  
+
   return (
     <div className="bg-[#303030] font-poppins relative min-h-screen overflow-x-hidden">
       <div className="container mx-auto sm:px-6 sm:py-10 p-5 sm:space-y-10 mt-16">
@@ -32,10 +32,12 @@ const Result = () => {
           <span className="text-white font-semibold">Result</span>
         </div>
 
-        <div className="flex sm:hidden items-center gap-3 text-white font-poppins text-lg font-medium">
-          <FaArrowLeft />
-          <div className="flex items-center">IVF Success Rate Calculator</div>
-        </div>
+        <Link to="/">
+          <div className="flex sm:hidden items-center gap-3 text-white font-poppins text-lg font-medium">
+            <FaArrowLeft />
+            <div className="flex items-center">IVF Success Rate Calculator</div>
+          </div>
+        </Link>
 
         <div className="flex items-center sm:gap-6 sm:mt-0 mt-1 relative">
           <img
